@@ -1,0 +1,3 @@
+import scapecord
+
+scapecord.run()
