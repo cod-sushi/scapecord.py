@@ -1,6 +1,8 @@
 # scapecord.py
 scapecord.py is a "construction sign" discord bot written in discord.py.
 
+![mark_koujichu](https://user-images.githubusercontent.com/46142035/55067106-734fd500-50c2-11e9-8fad-0e751db453bc.png)
+
 When your bot is under maintenance, This bot becomes a "Scapegoat".
 
 - Set bot state "Do not disturb"
@@ -28,7 +30,10 @@ scapecord.run()
 
 ## ScreenShot
 
-
+### Status
+![20190327_185215](https://user-images.githubusercontent.com/46142035/55066674-9e85f480-50c1-11e9-9eeb-709c0fa8fbb7.png)
+### Conversation 
+![20190327_184359](https://user-images.githubusercontent.com/46142035/55066515-5070f100-50c1-11e9-9904-4e6cf6d84b09.png)
 
 # Usage
 
@@ -46,14 +51,9 @@ $ pip install -r requirement.txt
 ```
 
 ## Set up configuration
+You can use `example/`. There are sample code and config.py. 
 
-### Edit config.py.
-
-```shell
-$ cd scapecord/
-$ cp config.py.sample config.py
-```
-
+### Create config.py
 ```python
 # config.py
 # coding: UTF-8
@@ -66,7 +66,7 @@ bot_command_prefix = '$'
 bot_command_prefix = None
 ```
 
-### create main python file
+### Create main.py
 ```shell
 $ vim main.py
 ```
@@ -74,11 +74,10 @@ $ vim main.py
 ```python
 # coding: UTF-8
 import scapecord
-
 scapecord.run()
 ```
 
-### run 
+### Run 
 ```
 $ python main.py
 ```
