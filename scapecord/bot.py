@@ -1,15 +1,13 @@
-import discord
 from discord.ext import commands
 import config
 
 
 class Bot(commands.Bot):
-    def __init__(self, *args, **kwargs):
-        kwargs["status"] = discord.Status.do_not_disturb
-        kwargs["command_prefix"] = config.command_prefix
-        super().__init__(*args, **kwargs)
-
     async def invoke(self, ctx):
+        if self.user.mentioned_in(ctx.message):
+            # Mention was processed in on_message.
+            return
+
         if ctx.invoked_with:
             await ctx.send(config.response)
 

@@ -7,6 +7,28 @@ When your bot is under maintenance, This bot becomes a "Scapegoat".
 - Send custom response when the bot is mensioned
 - Apply to both mention and custom prefix-command(ex: $start, $help, etc)
 
+# Example
+
+## Code
+
+### config.py
+```python
+# coding: UTF-8
+token = 'YOUR_DISCORD_TOKEN'
+response = "Sorry, I'm down for maintenance now. Please wait a moment."
+bot_command_prefix = '$'
+```
+
+### main.py
+```python
+# coding: UTF-8
+import scapecord
+scapecord.run()
+```
+
+## ScreenShot
+
+
 
 # Usage
 
@@ -25,31 +47,38 @@ $ pip install -r requirement.txt
 
 ## Set up configuration
 
-Edit config.py and place in the bot's root directory.
+### Edit config.py.
+
+```shell
+$ cd scapecord/
+$ cp config.py.sample config.py
+```
 
 ```python
 # config.py
 # coding: UTF-8
-import discord
 
-status = discord.Status.do_not_disturb
 token = 'YOUR_DISCORD_TOKEN'
 response = "Sorry, I'm down for maintenance now. Please wait a moment."
-bot = True
-command_prefix = '$'
-```
-Make the following folder structure:
-```
-examples
-├── config.py
-└── sample.py
+# If your bot is discord.ext.commands.Bot:
+bot_command_prefix = '$'
+# If your bot is discord.Client:
+bot_command_prefix = None
 ```
 
-## run sample.py
+### create main python file
+```shell
+$ vim main.py
 ```
-$ python sample.py
+
+```python
+# coding: UTF-8
+import scapecord
+
+scapecord.run()
 ```
 
-
-
-
+### run 
+```
+$ python main.py
+```

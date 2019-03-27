@@ -1,18 +1,14 @@
 from .client import Client
 from .bot import Bot
 import config
+import discord
 
 
 def run():
-    if config.bot:
-        sc = Bot()
+    st = discord.Status.do_not_disturb
+    if config.bot_command_prefix:
+        scapecord = Bot(config.bot_command_prefix, status=st)
     else:
-        sc = Client()
-    sc.response = config.response
-    sc.status = config.status
-    sc.command_prefix = config.command_prefix
-    sc.run(config.token)
+        scapecord = Client(status=st)
 
-
-if __name__ == "__main__":
-    run()
+    scapecord.run(config.token)
